@@ -247,3 +247,9 @@ def subscribe_newsletter(request):
 
     return redirect(request.META.get("HTTP_REFERER", "/"))
 
+def products_view(request):
+    products = Product.objects.all()
+    paginator = Paginator(products, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'core/products.html', {'page_obj': page_obj})

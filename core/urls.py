@@ -48,5 +48,6 @@ urlpatterns = [
    path('artificialplants/', views.artificial_plants_view, name='artificialplants_view'),
    path('artificial-plants/', views.artificial_plants_view, name='artificial_plants'),
    
+   path('products/', views.products_view, name='products_view'),
        path('subscribe/', subscribe_newsletter, name='subscribe_newsletter'),
 ]
