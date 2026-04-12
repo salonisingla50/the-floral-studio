@@ -51,7 +51,7 @@ def home(request):
         'social_links': SocialLink.objects.all(),
         'events': Event.objects.all(),
         'newsletter_form': form,
-        'footer': Footer.objects.latest('id'),
+        'footer': Footer.objects.order_by('-id').first(),
         'cart_items_count': cart_items_count,
     }
     return render(request, 'core/base.html', context)
